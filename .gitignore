@@ -1,0 +1,8 @@
+/src/MicroORMWrapper/obj
+/src/MicroORMWrapper/bin
+/src/MicroORMWrapper.Extensions.DependencyInjection/Properties
+/src/MicroORMWrapper.Extensions.DependencyInjection/bin
+/src/MicroORMWrapper.Extensions.DependencyInjection/obj
+/src/MicroORMWrapper.Extensions.DependencyInjection/*.user
+/.vs
+/src/.vs

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <nullable>enable</nullable>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <Version>0.1.0</Version>
+    <Authors>Vitae</Authors>
+    <Description>DI Extension For MicroORMWrapper ＆ IDbConnection;</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/CreatioVitae/MicroORMWrapper</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MicroORMWrapper" Version="0.1.2" />
+  </ItemGroup>
+
+</Project>
