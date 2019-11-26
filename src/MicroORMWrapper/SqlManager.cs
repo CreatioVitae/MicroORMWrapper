@@ -6,7 +6,7 @@ using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace MicroORMWrapper {
-    public class SqlManager : IAsyncDisposable {
+    public class SqlManager {
         private DbConnection DbConnection { get; set; }
 
         public bool IsOpenedConnection => DbConnection.State == ConnectionState.Open;
