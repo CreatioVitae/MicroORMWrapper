@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <nullable>enable</nullable>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
-    <Version>0.1.0</Version>
+    <Version>0.2.1-beta</Version>
     <Authors>Vitae</Authors>
     <Description>DI Extension For MicroORMWrapper ＆ IDbConnection;</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="MicroORMWrapper" Version="0.1.2" />
+    <PackageReference Include="MicroORMWrapper" Version="0.2.1-beta" />
   </ItemGroup>
 
 </Project>
