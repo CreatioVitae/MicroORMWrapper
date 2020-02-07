@@ -1,13 +1,12 @@
 using MicroORMWrapper;
-using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace Microsoft.Extensions.DependencyInjection {
     public static class ServiceCollectionExtensionLibrary {
-        public static IServiceCollection AddSqlManager(this IServiceCollection serviceDescriptors, string connectionString) {
+        public static IServiceCollection AddSqlManager<TDatabaseConnection>(this IServiceCollection serviceDescriptors, (string connectionName, string connectionString) connectionSetting) where TDatabaseConnection : class,IDatabaseConnection, new() {
             return serviceDescriptors
-                .AddScoped<DbConnection>((servicProvider) => new SqlConnection(connectionString))
-                .AddScoped<SqlManager>();
+                .AddScoped((serviceProvider) => new TDatabaseConnection { ConnectionName = connectionSetting.connectionName, DbConnection = new SqlConnection(connectionSetting.connectionString) })
+                .AddScoped(serviceProvider => new SqlManager<TDatabaseConnection>(serviceProvider.GetRequiredService<TDatabaseConnection>()));
         }
     }
 }

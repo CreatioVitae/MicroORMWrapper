@@ -6,13 +6,16 @@ using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace MicroORMWrapper {
-    public class SqlManager : IAsyncDisposable {
-        private DbConnection DbConnection { get; set; }
+    public class SqlManager<TDatabaseConnection> : IAsyncDisposable where TDatabaseConnection : IDatabaseConnection {
+        public DbConnection DbConnection { get; }
+
+        public string ConnectionName { get; }
 
         public bool IsOpenedConnection => DbConnection.State == ConnectionState.Open;
 
-        public SqlManager(DbConnection dbConnection) {
-            DbConnection = dbConnection;
+        public SqlManager(IDatabaseConnection databaseConnection) {
+            DbConnection = databaseConnection.DbConnection;
+            ConnectionName = databaseConnection.ConnectionName;
 
             OpenConnection();
         }
