@@ -44,6 +44,10 @@ namespace MicroORMWrapper {
             return DbConnection.Query<TResult>(query, prameters);
         }
 
+        public IEnumerable<TResult> Select<TResult>((string query, object prameters)queryAndParameters) where TResult : class? {
+            return DbConnection.Query<TResult>(queryAndParameters.query, queryAndParameters.prameters);
+        }
+
         public IEnumerable<TResult> Select<TResult, TInclude1>(string query, Func<TResult, TInclude1, TResult> includeFunc, object prameters, string splitOn = "Id") where TResult : class? where TInclude1 : class? {
             return DbConnection.Query(query, includeFunc, prameters, null, true, splitOn);
         }
@@ -60,6 +64,10 @@ namespace MicroORMWrapper {
             return DbConnection.QueryAsync<TResult>(query, prameters);
         }
 
+        public Task<IEnumerable<TResult>> SelectAsync<TResult>((string query, object prameters) queryAndParameters) where TResult : class? {
+            return DbConnection.QueryAsync<TResult>(queryAndParameters.query, queryAndParameters.prameters);
+        }
+
         public Task<IEnumerable<TResult>> SelectAsync<TResult, TInclude1>(string query, Func<TResult, TInclude1, TResult> includeFunc, object prameters, string splitOn = "Id") where TResult : class? where TInclude1 : class? {
             return DbConnection.QueryAsync(query, includeFunc, prameters, null, true, splitOn);
         }
@@ -74,6 +82,10 @@ namespace MicroORMWrapper {
 
         public List<TResult> SelectAsList<TResult>(string query, object prameters) where TResult : class? {
             return DbConnection.Query<TResult>(query, prameters).AsList();
+        }
+
+        public List<TResult> SelectAsList<TResult>((string query, object prameters) queryAndParameters) where TResult : class? {
+            return DbConnection.Query<TResult>(queryAndParameters.query, queryAndParameters.prameters).AsList();
         }
 
         public List<TResult> SelectAsList<TResult, TInclude1>(string query, Func<TResult, TInclude1, TResult> includeFunc, object prameters, string splitOn = "Id") where TResult : class? where TInclude1 : class? {
