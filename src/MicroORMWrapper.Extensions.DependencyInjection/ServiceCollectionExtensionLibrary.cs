@@ -1,5 +1,5 @@
 using MicroORMWrapper;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace Microsoft.Extensions.DependencyInjection {
     public static class ServiceCollectionExtensionLibrary {
