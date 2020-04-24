@@ -62,6 +62,18 @@ namespace MicroORMWrapper {
         DbTransaction? GetDbTransactionIfIsBegun() =>
             DbTransaction.IsInvalid() ? null : DbTransaction;
 
+        void DisposeTransaction() {
+            if (DbTransaction.IsInvalid()) {
+                return;
+            }
+
+#pragma warning disable CS8602 // IsInvalid での検査でNull検査済
+            DbTransaction.Rollback();
+#pragma warning restore CS8602
+
+            DbTransaction.Dispose();
+        }
+
         async ValueTask DisposeTransactionAsync() {
             if (DbTransaction.IsInvalid()) {
                 return;
@@ -72,6 +84,14 @@ namespace MicroORMWrapper {
 #pragma warning restore CS8602
 
             await DbTransaction.DisposeAsync();
+        }
+
+        public void CloseConnection() {
+            if (!IsOpenedConnection) {
+                return;
+            }
+
+            DbConnection.Close();
         }
 
         public async ValueTask CloseConnectionAsync() {
@@ -150,6 +170,12 @@ namespace MicroORMWrapper {
 
         public Task<int> ExecuteAsync(string command, object prameters) =>
             DbConnection.ExecuteAsync(command, prameters, transaction: GetDbTransactionIfIsBegun());
+
+        public void Dispose() {
+            DisposeTransaction();
+            CloseConnection();
+            GC.SuppressFinalize(this);
+        }
 
         public async ValueTask DisposeAsync() {
             await DisposeTransactionAsync();
