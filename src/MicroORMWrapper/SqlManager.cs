@@ -171,6 +171,9 @@ namespace MicroORMWrapper {
         public Task<int> ExecuteAsync(string command, object prameters) =>
             DbConnection.ExecuteAsync(command, prameters, transaction: GetDbTransactionIfIsBegun());
 
+        public Task<int> ExecuteAsync((string command, object prameters) commandAndParameters) =>
+            DbConnection.ExecuteAsync(commandAndParameters.command, commandAndParameters.prameters, transaction: GetDbTransactionIfIsBegun());
+
         public void Dispose() {
             DisposeTransaction();
             CloseConnection();
