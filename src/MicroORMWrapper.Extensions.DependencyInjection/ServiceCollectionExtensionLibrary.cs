@@ -3,10 +3,9 @@ using Microsoft.Data.SqlClient;
 
 namespace Microsoft.Extensions.DependencyInjection {
     public static class ServiceCollectionExtensionLibrary {
-        public static IServiceCollection AddSqlManager<TDatabaseConnection>(this IServiceCollection serviceDescriptors, (string connectionName, string connectionString) connectionSetting) where TDatabaseConnection : class,IDatabaseConnection, new() {
-            return serviceDescriptors
+        public static IServiceCollection AddSqlManager<TDatabaseConnection>(this IServiceCollection serviceDescriptors, (string connectionName, string connectionString) connectionSetting) where TDatabaseConnection : class, IDatabaseConnection, new() =>
+            serviceDescriptors
                 .AddScoped((serviceProvider) => new TDatabaseConnection { ConnectionName = connectionSetting.connectionName, DbConnection = new SqlConnection(connectionSetting.connectionString) })
                 .AddScoped(serviceProvider => new SqlManager<TDatabaseConnection>(serviceProvider.GetRequiredService<TDatabaseConnection>()));
-        }
     }
 }
