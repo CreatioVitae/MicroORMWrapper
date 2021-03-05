@@ -2,7 +2,7 @@ MicroORMWrapper</br>
 MicroORMWrapper.Extensions.DependencyInjection
 ===
 
-Getting Started(.NET Core 3.1 / ASP.NET Core)
+Getting Started(.NET 5 / ASP.NET Core)
 ---
 Create DatabaseConnection Object (Implement IDatabaseConnection)
 ```csharp
@@ -33,6 +33,7 @@ namespace WebApi.Kashilog.Repositories.DatabaseConnections {
 ```
 
 DI Settings(ServiceDescriptor Configuration)
+---
 ```csharp
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -62,6 +63,7 @@ namespace WebApi.Kashilog {
 ```
 
 Constructor Injection
+---
 ```csharp
 using MicroORMWrapper;
 using Service.Extensions.DependencyInjection.Markers;
@@ -86,5 +88,15 @@ namespace WebApi.Kashilog.Repositories.Kashi.Products {
         // ...
     }
 }
+```
 
+Use Transaction
+---
+```csharp
+await using var scopedTransaction = await KashilogSqlManager.BeginScopedTransactionAsync();
+
+// Any Process...
+
+// If it is marked Complete, it commits when DisposeAsync fires. If not, roll back...
+scopedTransaction.Complete();
 ```
