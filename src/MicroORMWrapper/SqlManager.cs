@@ -44,9 +44,7 @@ namespace MicroORMWrapper {
                 return;
             }
 
-#pragma warning disable CS8602 // IsInvalid での検査でNull検査済
             await DbTransaction.CommitAsync();
-#pragma warning restore CS8602
         }
 
         public async ValueTask RollbackIfUncommitedAsync() {
@@ -54,9 +52,7 @@ namespace MicroORMWrapper {
                 return;
             }
 
-#pragma warning disable CS8602 // IsInvalid での検査でNull検査済
             await DbTransaction.RollbackAsync();
-#pragma warning restore CS8602
         }
 
         DbTransaction? GetDbTransactionIfIsBegun() =>
@@ -67,10 +63,7 @@ namespace MicroORMWrapper {
                 return;
             }
 
-#pragma warning disable CS8602 // IsInvalid での検査でNull検査済
             DbTransaction.Rollback();
-#pragma warning restore CS8602
-
             DbTransaction.Dispose();
         }
 
@@ -79,10 +72,7 @@ namespace MicroORMWrapper {
                 return;
             }
 
-#pragma warning disable CS8602 // IsInvalid での検査でNull検査済
             await DbTransaction.RollbackAsync();
-#pragma warning restore CS8602
-
             await DbTransaction.DisposeAsync();
         }
 

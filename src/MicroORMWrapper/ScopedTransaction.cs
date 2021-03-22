@@ -28,14 +28,12 @@ namespace MicroORMWrapper {
                 return;
             }
 
-#pragma warning disable CS8602 // IsInvalid での検査でNull検査済
             if (ScopeIsComplete) {
                 await DbTransaction.CommitAsync();
                 return;
             }
 
             await DbTransaction.RollbackAsync();
-#pragma warning restore CS8602
         }
     }
 }
