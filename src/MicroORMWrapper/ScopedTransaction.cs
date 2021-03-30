@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace MicroORMWrapper {
     public class ScopedTransaction : IAsyncDisposable {
-        DbTransaction? DbTransaction { get; set; } = null;
+        public DbTransaction? DbTransaction { get; set; } = null;
 
         bool ScopeIsComplete { get; set; } = false;
 
