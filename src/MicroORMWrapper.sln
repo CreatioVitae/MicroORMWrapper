@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroORMWrapper", "MicroORM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroORMWrapper.Extensions.DependencyInjection", "MicroORMWrapper.Extensions.DependencyInjection\MicroORMWrapper.Extensions.DependencyInjection.csproj", "{CD315C14-5F99-4B82-A2A3-2C09E98D60A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroORMWrapper.Extensions.DependencyInjection.MySql", "MicroORMWrapper.Extensions.DependencyInjection.MySql\MicroORMWrapper.Extensions.DependencyInjection.MySql.csproj", "{7463FC97-7EDE-4B0D-A27C-D10AEFDCF902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroORMWrapper.Extensions.DependencyInjection.MySql", "MicroORMWrapper.Extensions.DependencyInjection.MySql\MicroORMWrapper.Extensions.DependencyInjection.MySql.csproj", "{7463FC97-7EDE-4B0D-A27C-D10AEFDCF902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMIntegrator", "ORMIntegrator\ORMIntegrator.csproj", "{D1F1B65B-6141-4428-A80E-37B2DA667CCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{7463FC97-7EDE-4B0D-A27C-D10AEFDCF902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7463FC97-7EDE-4B0D-A27C-D10AEFDCF902}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7463FC97-7EDE-4B0D-A27C-D10AEFDCF902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1F1B65B-6141-4428-A80E-37B2DA667CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F1B65B-6141-4428-A80E-37B2DA667CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F1B65B-6141-4428-A80E-37B2DA667CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F1B65B-6141-4428-A80E-37B2DA667CCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

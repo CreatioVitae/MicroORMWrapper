@@ -88,6 +88,7 @@ namespace ORMIntegrator {
             }
 
             DbConnection.Close();
+            DbContext.Dispose();
         }
 
         public async ValueTask CloseConnectionAsync() {
@@ -96,6 +97,7 @@ namespace ORMIntegrator {
             }
 
             await DbConnection.CloseAsync();
+            await DbContext.DisposeAsync();
         }
 
         public IEnumerable<TResult> Select<TResult>(string query) where TResult : class? =>
