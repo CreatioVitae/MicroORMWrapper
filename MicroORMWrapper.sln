@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroORMWrapper", "src\MicroORMWrapper\MicroORMWrapper.csproj", "{3BC3B123-ACEA-4CD1-A966-1370E664671D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroORMWrapper.Extensions.DependencyInjection", "src\MicroORMWrapper.Extensions.DependencyInjection\MicroORMWrapper.Extensions.DependencyInjection.csproj", "{176E33FF-FE55-4792-809F-7906D71AC938}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroORMWrapper.Extensions.DependencyInjection.MySql", "src\MicroORMWrapper.Extensions.DependencyInjection.MySql\MicroORMWrapper.Extensions.DependencyInjection.MySql.csproj", "{FC71F8F8-CC83-4DA3-BC6F-FC64A974401F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BC3B123-ACEA-4CD1-A966-1370E664671D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC3B123-ACEA-4CD1-A966-1370E664671D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC3B123-ACEA-4CD1-A966-1370E664671D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC3B123-ACEA-4CD1-A966-1370E664671D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{176E33FF-FE55-4792-809F-7906D71AC938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176E33FF-FE55-4792-809F-7906D71AC938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176E33FF-FE55-4792-809F-7906D71AC938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176E33FF-FE55-4792-809F-7906D71AC938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC71F8F8-CC83-4DA3-BC6F-FC64A974401F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC71F8F8-CC83-4DA3-BC6F-FC64A974401F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC71F8F8-CC83-4DA3-BC6F-FC64A974401F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC71F8F8-CC83-4DA3-BC6F-FC64A974401F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05FE1BCC-C3C2-4BFC-AC71-2976692FC99B}
+	EndGlobalSection
+EndGlobal
