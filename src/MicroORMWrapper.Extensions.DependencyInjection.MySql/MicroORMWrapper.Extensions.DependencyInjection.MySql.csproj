@@ -5,7 +5,7 @@
     <nullable>enable</nullable>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>Vitae</Authors>
     <Description>DI Extension For MicroORMWrapper ＆ IDbConnection;</Description>
     <PackageProjectUrl>https://github.com/CreatioVitae/MicroORMWrapper</PackageProjectUrl>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MicroORMWrapper" Version="0.7.1-beta" />
+    <PackageReference Include="MicroORMWrapper" Version="0.9.1-beta" />
     <PackageReference Include="MySqlConnector" Version="1.2.1" />
 
   </ItemGroup>
