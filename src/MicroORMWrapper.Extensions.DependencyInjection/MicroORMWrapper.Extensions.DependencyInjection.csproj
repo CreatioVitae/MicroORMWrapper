@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="MicroORMWrapper" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
   </ItemGroup>
 
 </Project>
